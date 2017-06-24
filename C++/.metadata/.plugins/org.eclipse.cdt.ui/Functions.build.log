@@ -1,0 +1,5 @@
+22:39:12 **** Clean-only build of configuration Debug for project Functions ****
+rm -rf func.o Functions.exe func.d 
+
+22:39:12 Build Finished (took 88ms)
+

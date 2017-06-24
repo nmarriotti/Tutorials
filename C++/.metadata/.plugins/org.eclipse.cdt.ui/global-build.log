@@ -1,0 +1,17 @@
+22:40:46 **** Clean-only build of configuration Debug for project ForLoop ****
+rm -rf ForLoop.exe for.o for.d 
+22:40:55 **** Rebuild of configuration Debug for project ForLoop ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o for.o "..\\for.cpp" 
+g++ -o ForLoop.exe for.o 
+c:/cygwin64/bin/../lib/gcc/x86_64-w64-mingw32/4.7.0/../../../../x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text+0x3d): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+22:41:28 **** Incremental Build of configuration Debug for project ForLoop ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o for.o "..\\for.cpp" 
+g++ -o ForLoop.exe for.o 
+Info: Nothing to build for ForLoop
+19:22:14 **** Incremental Build of configuration Debug for project ForLoop ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o for.o "..\\for.cpp" 
+g++ -o ForLoop.exe for.o 

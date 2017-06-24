@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1491285264 source:c:\users\nick\cpp\numberguesser\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+

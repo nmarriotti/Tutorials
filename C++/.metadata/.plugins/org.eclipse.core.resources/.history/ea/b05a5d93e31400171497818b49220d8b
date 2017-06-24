@@ -1,0 +1,22 @@
+// working.cpp by Bill Weinman <http://bw.org/>
+#include <iostream>
+using namespace std;
+
+int GetAge(int birthYear);
+
+int main( int argc, char ** argv ) {
+
+	int birthYear;
+
+	cout << "Hello, World!\n";
+	cout << "What is your birth year? ";
+	cin >> birthYear;
+
+	cout << "You are " << GetAge(birthYear) << endl;
+	return 0;
+}
+
+int GetAge(int birthYear) {
+	int age = 2017 - birthYear;
+	return age;
+}

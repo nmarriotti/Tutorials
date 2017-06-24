@@ -1,0 +1,5 @@
+22:39:12 **** Clean-only build of configuration Debug for project GettingUserInput ****
+rm -rf getInput.d getInput.o GettingUserInput.exe 
+
+22:39:13 Build Finished (took 96ms)
+

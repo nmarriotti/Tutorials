@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1491455342 source:c:\users\nick\cpp\csv\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

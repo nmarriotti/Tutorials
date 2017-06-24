@@ -1,0 +1,34 @@
+/*
+ * func.cpp
+ *
+ *  Created on: Mar 29, 2017
+ *      Author: Nick
+ */
+#include <iostream>
+using namespace std;
+
+// Initialize the function
+void func();
+int add(int x);
+
+int main() {
+
+	func();
+
+	int y = 50;
+	cout << y << " + 50 is " << add(y);
+
+	return 0;
+}
+
+void func() {
+	cout << "This is a function.\n";
+}
+
+int add(int x) {
+	x += 50;
+	return x;
+}
+
+
+

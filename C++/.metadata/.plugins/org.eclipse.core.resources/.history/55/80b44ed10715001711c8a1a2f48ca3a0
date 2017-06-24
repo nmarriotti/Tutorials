@@ -1,0 +1,16 @@
+/*
+ * getInput.cpp
+ *
+ *  Created on: Mar 29, 2017
+ *      Author: Nick
+ */
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "Hello World" << endl;
+	return 0;
+}
+
+
+

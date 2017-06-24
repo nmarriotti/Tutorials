@@ -1,0 +1,5 @@
+22:18:37 **** Clean-only build of configuration Debug for project HelloWorld ****
+rm -rf hello.d HelloWorld.exe hello.o 
+
+22:18:37 Build Finished (took 136ms)
+
