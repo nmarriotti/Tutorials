@@ -6,6 +6,5 @@ use warnings;
 my $color;
 
 print("What's your favorite color? ");
-$color = <STDIN>;
-chomp $color;
+chomp($color = <STDIN>);
 print("Your favorite color is $color\n");
