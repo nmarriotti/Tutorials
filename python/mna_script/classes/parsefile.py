@@ -1,4 +1,5 @@
 import time
+import sys
 import datetime as dt
 import csv
 from classes.row import *
@@ -30,14 +31,20 @@ class ParseFile():
 		if not self.gui:
 			print "\a\nResults:\n\tTime elapsed: {:0.2f} seconds\n\tFound: {}/{} ({:0.2f}%)\n\tDiscarded: {}\n".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard)
 		else:
-			return "Completed in {:0.2f} seconds. \nFound: {}/{} ({:0.2f}%) and Discarded: {}".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard)
+			return "Completed in {:0.2f} seconds. \nFound: {}/{} ({:0.2f}%) and Discarded: {}\nOutput saved to: {}".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard, self.fileObj.GetOutputFile())
 	
 	# Start processing the file	
 	def run(self):
 		print "Checking data, please wait..."
 		for row in self.fileObj.open(self.fileObj.GetSortedFile()):  # loop through each row in file
 			self.allrows +=1  # count the rows
-			NewRow = Row(row)  # create row object
+			try:
+				NewRow = Row(row)  # create row object
+			except:
+				if not self.gui:
+					print "Input file not formatted properly"
+					print "Exiting"
+					sys.exit(1)
 			if not NewRow.isNull():  # check if row is missing data
 				self.master.append(NewRow)  # add row to list
 			else:
@@ -50,10 +57,10 @@ class ParseFile():
 		if self.CheckReadyToPrint(self.printlist, self.fileObj.GetOutputFile(), self.fileObj.getHeaders()):  # Check if there's something to print
 			self.printRows(self.printlist, self.fileObj.GetOutputFile(), self.fileObj.getHeaders())  # Print the rows
 			print "\nOutput saved to: \n\t{}".format(self.fileObj.GetOutputFile())  # display output file path
-			self.fileObj.cleanUp()
 			self.printResults() # print the final results
 		else:
 			print "NO RESULTS FOUND"
+		self.fileObj.cleanUp()
 
 	# Check two rows
 	def CheckRows(self, master, printlist, total):

@@ -22,7 +22,7 @@ def main():
 	print "CSV Scanner v1.0 - Developed by CTR1(IW) Nicholas Marriotti"
 	parser = argparse.ArgumentParser(description="This script checks csv rows that match certain criteria.\nIf no arguments are supplied GUI will be used.")
 	parser.add_argument("-input", type=str, help="input file to parse")
-	parser.add_argument("-timeinterval", type=int, default=1, help="time interval, default 1.0 sec")
+	parser.add_argument("-timeinterval", type=float, default=1.0, help="time interval, default 1.0 sec")
 	parser.add_argument("-freqinterval", type=float, default=0.011, help="frequency interval, default .011")
 
 	args = parser.parse_args()  # set arguments
