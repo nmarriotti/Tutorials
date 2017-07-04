@@ -30,7 +30,7 @@ class ParseFile():
 		if not self.gui:
 			print "\a\nResults:\n\tTime elapsed: {:0.2f} seconds\n\tFound: {}/{} ({:0.2f}%)\n\tDiscarded: {}\n".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard)
 		else:
-			return "Completed in {:0.2f} seconds. Found: {}/{} ({:0.2f}%) and Discarded: {}\n".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard)
+			return "Completed in {:0.2f} seconds. \nFound: {}/{} ({:0.2f}%) and Discarded: {}".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard)
 	
 	# Start processing the file	
 	def run(self):
@@ -78,7 +78,7 @@ class ParseFile():
 			for row in printlist:
 				writer.writerow(row)
 		printlist = []
-
+		
 	# Check if there's anything to print
 	def CheckReadyToPrint(self, printlist, outputfile, headers):
 		if len(printlist) >= 1: # there's at least one row to print
@@ -101,11 +101,5 @@ class ParseFile():
 			return True
 		else:
 			return False
-	
-	def printMessage(self): # Messages vary depending on whether the user is using the gui version
-		if self.gui is True:
-			return self.message
-		else:
-			print self.message
 		
 	
