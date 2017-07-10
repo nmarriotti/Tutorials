@@ -9,6 +9,7 @@ class InputFile():
 		self.extension = os.path.splitext(inputfile)[1]
 		self.outputfile = os.path.splitext(inputfile)[0] + "_parsed.csv"
 		self.sorted = os.path.splitext(inputfile)[0] + "_sorted.csv"
+		self.kmloutput = os.path.splitext(inputfile)[0] + ".kml"
 		self.length = 0
 		
 	def GetSortedFile(self):
@@ -26,6 +27,9 @@ class InputFile():
 		
 	def GetFullFilePath(self):
 		return self.fullpath
+		
+	def GetKML(self):
+		return self.kmloutput
 		
 	def open(self, file_to_open):
 		with open(file_to_open, "rU") as csvfile:

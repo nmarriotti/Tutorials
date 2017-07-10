@@ -29,14 +29,15 @@ class ParseFile():
 	# Print out the final results
 	def printResults(self):
 		if not self.gui:
-			print "\a\nResults:\n\tTime elapsed: {:0.2f} seconds\n\tFound: {}/{} ({:0.2f}%)\n\tDiscarded: {}\n".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard)
+			print "\a\nResults:\n\tTime elapsed: {:0.2f} seconds\n\tFound: {}/{} ({:0.2f}%)\n\tDiscarded: {}".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard)
 		else:
 			return "Completed in {:0.2f} seconds. \nFound: {}/{} ({:0.2f}%) and Discarded: {}\nOutput saved to: {}".format(time.time()-self.startTime, self.total, self.allrows, float(self.total)/float(self.allrows)*100.0, self.discard, self.fileObj.GetOutputFile())
 	
 	# Start processing the file	
 	def run(self):
 		print "Checking data, please wait..."
-		for row in self.fileObj.open(self.fileObj.GetSortedFile()):  # loop through each row in file
+		for row in self.fileObj.open(self.fileObj.GetFullFilePath()):  # loop through each row in file
+			#print row
 			self.allrows +=1  # count the rows
 			try:
 				NewRow = Row(row)  # create row object
@@ -60,7 +61,7 @@ class ParseFile():
 			self.printResults() # print the final results
 		else:
 			print "NO RESULTS FOUND"
-		self.fileObj.cleanUp()
+		#self.fileObj.cleanUp()
 
 	# Check two rows
 	def CheckRows(self, master, printlist, total):
@@ -82,6 +83,8 @@ class ParseFile():
 		with open(outputfile, 'wb') as outfile:
 			writer = csv.DictWriter(outfile, fieldnames=headers)
 			writer.writeheader()
+			#print "printlist:"
+			#print printlist
 			for row in printlist:
 				writer.writerow(row)
 		printlist = []
@@ -97,14 +100,14 @@ class ParseFile():
 	def ValidTimeDifference(self, x, y):
 		a = dt.datetime.strptime(str(x), '%m/%d/%Y %H:%M:%S')
 		b = dt.datetime.strptime(str(y), '%m/%d/%Y %H:%M:%S')
-		if abs((b-a).total_seconds()) <= self.timeint:
+		if abs((a-b).total_seconds()) <= self.timeint:
 			return True
 		else:
 			return False
 
 	# Check if the frequency falls within the freq interval	
 	def ValidFreq(self, x, y):
-		if abs(y-x) <= self.freqint:
+		if abs(y-x) > self.freqint:
 			return True
 		else:
 			return False

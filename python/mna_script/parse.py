@@ -8,6 +8,7 @@ import sys
 from classes.gui import *
 from classes.imputfile import *
 from classes.parsefile import *
+from classes.stationcheck import *
 				
 
 # Exit the script
@@ -41,8 +42,10 @@ def main():
 		if not input_file.CheckFileExtension():  # file extension is not .csv
 			exit_script()
 		# Process file 
-		input_file.sort(col=0, save=True)
+		#input_file.sort(col=0, save=True)
 		run = ParseFile(fileObj=input_file, timeinterval=args.timeinterval, freqinterval=args.freqinterval, gui=False)
+		run.run()
+		run = KMLScan(fileObj=input_file, timeinterval=args.timeinterval)
 		run.run()
 	
 

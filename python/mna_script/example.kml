@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>example.kml</name>
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	<Placemark>
+		<name>100.0</name>
+		<LookAt>
+			<longitude>-126.016</longitude>
+			<latitude>27.78452</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<range>4466307.22615197</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#msn_volcano</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>27.78452,126.016,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>110.0</name>
+		<Point>
+			<coordinates>16.304,119.548,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>115.0</name>
+		<Point>
+			<coordinates>18.304,125.548,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="track1">
+		<name>path</name>
+		<visibility>0</visibility>
+		<LineString>
+			<coordinates>
+				27.78452,126.016,0 16.304,119.548,0 18.304,125.548,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+	<Placemark>
+		<name>108.01</name>
+		<Point>
+			<coordinates>19.193,114.986,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>112.0</name>
+		<Point>
+			<coordinates>17.996,119.195,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>115.01</name>
+		<Point>
+			<coordinates>27.557,121.231,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="track1">
+		<name>path</name>
+		<visibility>0</visibility>
+		<LineString>
+			<coordinates>
+				19.193,114.986,0 17.996,119.195,0 27.557,121.231,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
