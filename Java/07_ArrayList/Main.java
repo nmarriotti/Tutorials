@@ -4,7 +4,7 @@ public class Main {
         
         int size; /* Will store size of list */
 
-        //Create an ArrayList of string values 
+        /* Create an ArrayList of string values */
         ArrayList<String> MyList = new ArrayList<String>();  
 
         // Add values to the List
