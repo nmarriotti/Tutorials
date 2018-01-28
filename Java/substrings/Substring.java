@@ -8,5 +8,8 @@ public class Substring {
 
         String test = "THAT TREE IS HUGE.";
         System.out.println(test.substring(5, 9));
+
+	String x = "foo";
+	System.out.println(x.substring(0, 1));
     }
 }
